@@ -1,0 +1,26 @@
+{
+  "name": "awesome-signature",
+  "description": "Angular signature pad with multiple signature management options",
+  "private": true,
+  "main": "src/app/signature.js",
+  "ignore": [
+    "src/app/app.js",
+    "src/app/app.tpl.html"
+  ],
+  "dependencies": {
+    "angular": "1.3.2",
+    "angular-bootstrap": "0.12.0",
+    "bootstrap": "3.3.0",
+    "signature_pad": "~1.3",
+    "ng-file-upload": "5.0.9",
+    "ng-signature-pad": "git://github.com/ecentinela/ng-signature-pad.git",
+    "plivo-node": "git://github.com/plivo/plivo-node.git",
+    "KLogger": "git://github.com/katzgrau/KLogger.git",
+    "international-phone-number": "~0.0.7"
+  },
+  "resolutions": {
+    "angular": "1.3.2",
+    "bootstrap": "3.3.0",
+    "jquery": ">= 1.9.1"
+  }
+}

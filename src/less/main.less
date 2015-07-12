@@ -1,0 +1,43 @@
+/**
+ * This is the main application stylesheet. It should include or import all
+ * stylesheets used throughout the application as this is the only stylesheet in
+ * the Grunt configuration that is automatically processed.
+ */
+
+/**
+ * Include external stylesheets.
+ */
+
+@vendor_dir: '/vendor';
+
+@import '@{vendor_dir}/bootstrap/less/bootstrap.less';
+@import '@{vendor_dir}/intl-tel-input/build/css/intlTelInput.css';
+
+.iti-flag { background-image: url("flags.png"); }
+
+canvas {
+	float: center;
+	border: 1px solid black;
+}
+
+.8th-width {
+	width: 80%;
+}
+
+.justified {
+	text-align: center;
+}
+
+.font-preview {
+	width: 325px;
+	height: 150px;
+	line-height: 140px;
+	padding: 10px;
+	margin-right: 10px;
+	float: left;
+	text-align: center;
+	vertical-align: middle;
+	border: 1px dotted black;
+	word-wrap: break-word;
+	overflow: hidden;
+}

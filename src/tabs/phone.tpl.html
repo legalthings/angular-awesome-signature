@@ -1,0 +1,25 @@
+<div ng-controller="phoneController">
+	<h3 align='center'>We'll text you a link</h3>
+	<form method="post" action="">
+		<div class="row">
+		    <div class="col-md-5">
+		        * image place holder *
+		    </div>
+		</div>
+		<div class="row">
+		    <div class="col-md-7">
+		    	<div class="input-group">
+		        	<input type="text" class="form-control" international-phone-number default-country="nl" preferred-countries="nl" ng-model="phone"/>
+		        	<span class="input-group-btn">
+		        		<button type="button" class="btn btn-primary" ng-click="onSendClick()">Send</button>
+		        	</span>
+		        </div>
+		    </div>
+		</div>
+	</form>
+	
+	<p align="center" style="margin-top:50px;">
+		This feature requires a phone with <b>iOS 7</b> or <b>Android 4</b> or later<br />
+		Patent pending
+	</p>
+</div>
