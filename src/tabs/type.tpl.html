@@ -6,7 +6,7 @@
     <div class="row">
       <div class="col-md-4 col-lg-offset-4">
         <div class="input-group">
-          <input type="text" class="form-control" ng-model="name"/>
+          <input type="text" class="form-control" ng-model="name" />
           <span class="input-group-btn">
             <button type="button" class="btn btn-primary" ng-click="onSaveClick()">Save</button>
           </span>
@@ -16,9 +16,7 @@
     <div class="row">
       <div ng-repeat="font in fonts">
         <div class="font-preview" style="font-family:{{font.family}};font-size:32px;">
-          <input type="radio" value="{{font.family}}" ng-model="$parent.fontFamily">
-          {{name}}
-          </div>
+          <input type="radio" value="{{font.family}}" ng-model="$parent.fontFamily">{{name}}</div>
       </div>
       <div style="clear: left;"></div>
     </div>
