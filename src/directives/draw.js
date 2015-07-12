@@ -2,7 +2,7 @@
 
 angular.module('signature').directive('draw', function() {
   return {
-    link: function ($scope, element, attrs) {
+    link: function($scope, element, attrs) {
       var canvas = document.querySelector("canvas");
       var signaturePad = new SignaturePad(canvas);
 
