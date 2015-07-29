@@ -1,8 +1,9 @@
 "use strict";
 
-angular.module('signature').controller('uploadController', function($scope, uploadService) {
+angular.module('awesome-signature').controller('uploadController', function($scope, convert) {
   $scope.$watch('files', function() {
     var files = $scope.files;
-    uploadService.upload(files);
+
+    if (files != null) convert.toBase64(files);
   });
 });

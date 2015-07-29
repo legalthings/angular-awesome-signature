@@ -1,18 +1,22 @@
 "use strict";
 
-angular.module('signature').directive('draw', function() {
+angular.module('awesome-signature').directive('draw', function(iam) {
   return {
-    link: function($scope, element, attrs) {
-      var canvas = document.querySelector("canvas");
-      var signaturePad = new SignaturePad(canvas);
-
-      $scope.save = function() {
-        alert(signaturePad.toDataURL());
+    restrict: 'EA',
+    templateUrl: 'src/directives/draw.tpl.html',
+    replace: true,
+    controller: [
+      '$scope',
+      function ($scope) {
+        $scope.save = function () {
+          var signature = $scope.accept();
+          iam.signatures.save({
+              'user': session.user.id,
+              'signature': signature
+            }
+          )
+        }
       }
-
-      $scope.clear = function() {
-        signaturePad.clear();
-      }
-    }
+    ]
   }
 });

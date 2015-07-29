@@ -60,6 +60,8 @@ module.exports = {
       'vendor/angular-bootstrap/ui-bootstrap-tpls.js',
       'vendor/angular-native-dragdrop/draganddrop.js',
       'vendor/angular-images-loaded/angular-images-loaded.js',
+      'vendor/angular-signature/src/signature.js',
+      'vendor/angular-resource/angular-resource.js',
       'vendor/ng-file-upload/ng-file-upload-shim.js',
       'vendor/ng-file-upload/ng-file-upload.js',
       'vendor/angular-aside/dist/js/angular-aside.js',
@@ -67,8 +69,6 @@ module.exports = {
       'vendor/intl-tel-input/lib/libphonenumber/build/utils.js',
       'vendor/international-phone-number/releases/international-phone-number.js',
       'vendor/signature_pad/signature_pad.js',
-      'vendor/signature-pad-angular/src/ng-signature-pad.js',
-      'vendor/ng-signature-pad/dist/ng-signature-pad.js',
       'vendor/legalthings.*/src/**/*.js',
       '!vendor/legalthings.*/src/**/*.spec.js'
     ],

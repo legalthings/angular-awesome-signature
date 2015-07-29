@@ -1,7 +1,7 @@
 "use strict";
 
 var app = angular.module('app', [
-  'signature',
+  'awesome-signature',
 ]);
 
 app.directive('responsiveCanvas', function() {

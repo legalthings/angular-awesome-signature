@@ -1,0 +1,25 @@
+<div>
+  <form method="post" action="">
+    <div class="row">
+      <h3 align="center">Type your name and choose your desired signature</h3>
+    </div>
+    <div class="row">
+      <div class="col-md-4 col-lg-offset-4">
+        <div class="input-group">
+          <input type="text" class="form-control" ng-model="name" />
+          <span class="input-group-btn">
+            <button type="button" class="btn btn-primary" ng-click="accept()">Save</button>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="row row-centered spacing-top">
+      <div ng-repeat="font in fonts">
+        <div class="font-preview col-xs-3 col-centered" style="font-family:{{font.family}};font-size:32px;">
+          <input type="radio" value="{{font.family}}" ng-model="$parent.fontFamily">{{name}}
+        </div>
+      </div>
+      <div style="clear: left;"></div>
+    </div>
+  </form>
+</div>

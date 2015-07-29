@@ -1,8 +1,14 @@
 "use strict";
 
-angular.module('signature', [
+angular.module('awesome-signature', [
   'ui.bootstrap',
-  'ngSignaturePad',
+  'signature',
   'ngFileUpload',
+  'ngResource',
   'internationalPhoneNumber'
+]);
+
+angular.module('awesome-signature').config(['$httpProvider', function($httpProvider) {
+        $httpProvider.defaults.useXDomain = true;
+    }
 ]);
