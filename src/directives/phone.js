@@ -16,7 +16,7 @@ angular.module('awesome-signature').directive('phoneSelector', function(sms) {
           utilsScript: "vendor/intl-tel-input/lib/libphonenumber/build/utils.js"
         });
 
-        $scope.accept = function () {
+        $scope.send = function () {
           var num = telInput.intlTelInput("getNumber");
           sms.send(num);
         }

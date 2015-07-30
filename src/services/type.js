@@ -1,6 +1,6 @@
 "use strict";
 
-angular.module('awesome-signature').service('type', function(iam, session) {
+angular.module('awesome-signature').service('type', function() {
   var service = {
     fonts: [
       { name: "Arial", family: "arial" },
@@ -9,14 +9,10 @@ angular.module('awesome-signature').service('type', function(iam, session) {
       { name: "Times New Roman", family: "times new roman"}
     ],
 
-    save: function(name, fontFamily) {
-          iam.signatures.save({
-              'user': session.user.id,
-              'signature': name
-            }
-          )
+    save: function(img) {
+      return img;
     }
   }
-
+  
   return service;
 });

@@ -1,6 +1,6 @@
 "use strict";
 
-angular.module('awesome-signature').directive('draw', function(iam, session) {
+angular.module('awesome-signature').directive('draw', function() {
   return {
     restrict: 'EA',
     templateUrl: 'src/directives/draw.tpl.html',
@@ -10,11 +10,7 @@ angular.module('awesome-signature').directive('draw', function(iam, session) {
       function ($scope) {
         $scope.save = function () {
           var signature = $scope.accept();
-          iam.signatures.save({
-              'user': session.user.id,
-              'signature': signature
-            }
-          )
+          return signature;
         }
       }
     ]

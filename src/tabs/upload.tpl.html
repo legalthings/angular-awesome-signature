@@ -1,13 +1,18 @@
 <div ng-controller="uploadController">
+  <h3 align='center'>Upload a file to use as a signature</h3>
   <form action="" method="post" enctype="multipart/form-data">
-    <div class="form-group">
-      <label for="sig-upload" class="col-sm-3 control-label">Choose File</label>
-      <div class="col-sm-9">
-        <div class="btn btn-primary" ngf-select ng-model="files">Browse for file</div>
-        <span class="input-group-btn">
-          <button type="button" class="btn btn-primary" ng-click="upload()">Upload</button>
-        </span>
+    <div class="row">
+      <div class="col-md-4 col-lg-offset-4">
+        <div class="input-group">
+          <input type="text" value="{{file}}" class="form-control" ng-model="file">
+          <span class="input-group-btn">
+            <div class="btn btn-primary" ngf-select ng-model="files">Browse</div>
+          </span>
+        </div>
       </div>
     </div>
+    <br>
+    <div class="8th-width justified"><button type="button" class="btn btn-success" ng-click="upload()">Upload</button></div>
+    <div style="clear: left;"></div>
   </form>
 </div>

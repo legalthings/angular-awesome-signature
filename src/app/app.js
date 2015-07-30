@@ -4,6 +4,11 @@ var app = angular.module('app', [
   'awesome-signature',
 ]);
 
+app.config(['$resourceProvider', function($resourceProvider) {
+  // Don't strip trailing slashes from calculated URLs
+  $resourceProvider.defaults.stripTrailingSlashes = false;
+}]);
+
 app.directive('responsiveCanvas', function() {
   var c = $('#canvas');
   var ct = c.get(0).getContext('2d');

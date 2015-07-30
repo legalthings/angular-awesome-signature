@@ -1,8 +1,10 @@
 var express = require('express');
+var cors = require('cors');
 var app = express();
 var server = require('http').Server(app);
 
 app.engine('html', require('ejs').renderFile);
+app.use(cors());
 app.use(express.static(__dirname + '/build'));
 app.set('views', __dirname + '/build');
 app.set('view engine', 'html');

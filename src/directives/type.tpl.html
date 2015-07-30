@@ -6,7 +6,7 @@
     <div class="row">
       <div class="col-md-4 col-lg-offset-4">
         <div class="input-group">
-          <input type="text" class="form-control" ng-model="name" />
+          <input type="text" id="name" class="form-control" ng-model="name" />
           <span class="input-group-btn">
             <button type="button" class="btn btn-primary" ng-click="accept()">Save</button>
           </span>
@@ -15,8 +15,9 @@
     </div>
     <div class="row row-centered spacing-top">
       <div ng-repeat="font in fonts">
-        <div class="font-preview col-xs-3 col-centered" style="font-family:{{font.family}};font-size:32px;">
-          <input type="radio" value="{{font.family}}" ng-model="$parent.fontFamily">{{name}}
+        <div class="font-preview col-md-4 col-centered" style="font-family:{{font.family}};font-size:32px;">
+          <input type="radio" value="{{font.family}}" ng-model="$parent.fontFamily">
+          <canvas id="{{font.family}}" class="typeCanvas">
         </div>
       </div>
       <div style="clear: left;"></div>
