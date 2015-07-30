@@ -1,6 +1,6 @@
 "use strict";
 
-angular.module('awesome-signature').directive('draw', function(iam) {
+angular.module('awesome-signature').directive('draw', function(iam, session) {
   return {
     restrict: 'EA',
     templateUrl: 'src/directives/draw.tpl.html',

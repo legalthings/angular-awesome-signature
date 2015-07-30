@@ -1,6 +1,6 @@
 "use strict";
 
-angular.module('awesome-signature').service('convert', function(iam) {
+angular.module('awesome-signature').service('convert', function(iam, session) {
   var service = {
     toBase64: function(files) {
       if (files && files.length) {
@@ -16,7 +16,7 @@ angular.module('awesome-signature').service('convert', function(iam) {
             iam.signatures.save({
                 'user': session.user.id,
                 'signature': e.target.result
-              }
+              });
           }
           
           reader.readAsDataURL(file);

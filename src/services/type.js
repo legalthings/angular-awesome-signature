@@ -1,6 +1,6 @@
 "use strict";
 
-angular.module('awesome-signature').service('type', function(iam) {
+angular.module('awesome-signature').service('type', function(iam, session) {
   var service = {
     fonts: [
       { name: "Arial", family: "arial" },
@@ -10,7 +10,6 @@ angular.module('awesome-signature').service('type', function(iam) {
     ],
 
     save: function(name, fontFamily) {
-          var signature = $scope.accept();
           iam.signatures.save({
               'user': session.user.id,
               'signature': name
