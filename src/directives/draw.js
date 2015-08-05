@@ -1,16 +1,14 @@
 "use strict";
 
-angular.module('awesome-signature').directive('draw', function() {
+angular.module('awesome-signature').directive('awesomeDraw', function() {
   return {
-    restrict: 'EA',
-    templateUrl: 'src/directives/draw.tpl.html',
-    replace: true,
-    controller: [
-      '$scope',
-      function ($scope) {
-        $scope.save = function () {
+    scope: {
+      'onSave': '&save'
+    },
+    controller: ['$scope', function ($scope) {
+        $scope.onSave = function () {
           var signature = $scope.accept();
-          return signature;
+          $scope.save(signature);
         }
       }
     ]

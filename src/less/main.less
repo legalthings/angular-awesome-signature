@@ -28,12 +28,25 @@ canvas {
 	text-align: center;
 }
 
+.font-preview-container {
+   width: 80%;
+   margin: 0 auto;
+}
+
 .font-preview {
-	min-width: 300px;
+	min-width: 310px;
+        max-width: 310px;
+        float: left;
 	text-align: center;
 	vertical-align: middle;
 	word-wrap: break-word;
 	overflow: hidden;
+}
+
+.font-preview > canvas {
+  width: 300px;
+  height: 50px;
+  float: left;
 }
 
 .spacing-top {
@@ -45,6 +58,15 @@ canvas {
   margin-top: -25px;
 }
 
-.typeCanvas {
-	width: 100%;
+.phone-input-group {
+  & * { float: left; }
+  & button {
+      margin-left: -1px;
+      border-bottom-left-radius: 0px;
+      border-top-left-radius: 0px;
+    }
+  & input {
+      border-bottom-right-radius: 0px;
+      border-top-right-radius: 0px;
+    }
 }

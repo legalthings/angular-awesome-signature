@@ -14,7 +14,7 @@ angular.module('awesome-signature').service('sms', function($resource) {
       }, function (response) {
         console.log("Response: " + response.message);
       });
-		}
+    }
   }
 
   return service;

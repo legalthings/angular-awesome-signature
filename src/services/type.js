@@ -3,16 +3,10 @@
 angular.module('awesome-signature').service('type', function() {
   var service = {
     fonts: [
-      { name: "Arial", family: "arial" },
-      { name: "Verdana", family: "verdana" },
-      { name: "Georgia", family: "georgia" },
-      { name: "Times New Roman", family: "times new roman"}
-    ],
-
-    save: function(img) {
-      return img;
-    }
-  }
-  
+      { name: "Arial", family: "arial", size: "25px" },
+      { name: "Verdana", family: "verdana", size: "25px" },
+      { name: "Georgia", family: "georgia", size: "25px" },
+      { name: "Times New Roman", family: "times new roman", size: "25px"}
+    ]}
   return service;
 });
