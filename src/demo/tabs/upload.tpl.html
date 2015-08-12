@@ -3,16 +3,19 @@
   <form action="" method="post" enctype="multipart/form-data">
     <div class="row">
       <div class="col-md-4 col-lg-offset-4">
-        <div class="input-group">
-          <input type="text" value="{{file}}" class="form-control" ng-model="file">
+        <div class="input-group centered">
+          <input type="text" id="name" class="form-control" ng-model="name" />
           <span class="input-group-btn">
-            <div class="btn btn-primary" ngf-select ng-model="files">Browse</div>
+            <div class="btn btn-primary" ngf-select ng-model="file">Browse</div>
+            <div class="btn btn-success" ng-click="upload()">Upload</div>
           </span>
         </div>
+        </br>
+        <img class="upload-preview" ngf-src="file" ngf-default-background="'assets/thumb.png'" ngf-accept="'image/*'">
+        <div id="baseString" style="font-size: 8px; word-wrap: break-word;"></div>
       </div>
     </div>
     <br>
-    <div class="8th-width justified"><button type="button" class="btn btn-success" ng-click="upload()">Upload</button></div>
     <div style="clear: left;"></div>
   </form>
 </div>

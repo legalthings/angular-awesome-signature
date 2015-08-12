@@ -1,7 +1,10 @@
 <h1>awesome-signature demo</h1>
-<div class="well">
+<div class="well" ng-show="!signature.dataUrl">
   <tabset justified="true">
     <tab ng-repeat="tab in tabs" heading="{{tab.name}}" ng-click="switchTab(tab)"></tab>
   </tabset>
   <div ng-include="tab" class="tabs-data"></div>
+</div>
+<div class="well" ng-show="signature.dataUrl">
+  <img ng-src="{{ signature.dataUrl }}">
 </div>

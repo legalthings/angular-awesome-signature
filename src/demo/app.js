@@ -4,12 +4,11 @@ var app = angular.module('app', [
   'awesome-signature',
 ]);
 
-app.config(['$resourceProvider', function($resourceProvider) {
-  // Don't strip trailing slashes from calculated URLs
+app.config(['$resourceProvider', function ($resourceProvider) {
   $resourceProvider.defaults.stripTrailingSlashes = false;
 }]);
 
-app.directive('responsiveCanvas', function() {
+app.directive('responsiveCanvas', function () {
   var c = $('#canvas');
   var ct = c.get(0).getContext('2d');
   var container = $(c).parent();
@@ -23,7 +22,9 @@ app.directive('responsiveCanvas', function() {
   resizeCanvas();
 });
 
-app.controller('AppCtrl', function($scope, $window) {
+app.controller('AppCtrl', function ($scope, $window) {
+  $scope.signature = {};
+
   $scope.tabName = "Draw";
   $scope.tab = 'src/demo/tabs/draw.tpl.html';
 
@@ -34,7 +35,7 @@ app.controller('AppCtrl', function($scope, $window) {
     { name: "Upload", url: "src/demo/tabs/upload.tpl.html", active: false }
   ];
 
-  $scope.switchTab = function(tab) {
+  $scope.switchTab = function (tab) {
     $scope.tab = tab.url;
     $scope.tabName = tab.name;
   }

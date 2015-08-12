@@ -1,15 +1,15 @@
 "use strict";
 
-angular.module('awesome-signature').controller('uploadController', function($scope, convert) {
-  $scope.file = "";
-  var files;
-
-  $scope.$watch('files', function() {
-    files = $scope.files;
-    if (files != null) $scope.file = files[0].name;
+angular.module('awesome-signature').controller('uploadController', function ($scope, fileToDataUrl) {
+  $scope.$watch('file', function () {
+    if ($scope.file) $scope.name = $scope.file.name;
   });
 
-  $scope.upload = function() {
-    if (files != null) convert.toBase64(files);
+  $scope.upload = function () {
+    fileToDataUrl($scope.file, function (dataUrl) {
+      $scope.$apply(function () {
+        $scope.signature.dataUrl = dataUrl;
+      });
+    });
   }
 });

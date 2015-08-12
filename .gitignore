@@ -6,3 +6,4 @@ node_modules/
 vendor/
 .elasticbeanstalk
 nmp-debug.log
+.directory

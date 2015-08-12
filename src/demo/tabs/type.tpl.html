@@ -1,4 +1,4 @@
-<div>
+<div ng-controller="typeController">
   <form method="post" action="">
     <div class="row">
       <h3 align="center">Type your name and choose your desired signature</h3>
@@ -8,13 +8,13 @@
         <div class="input-group">
           <input type="text" id="name" class="form-control" ng-model="name" />
           <span class="input-group-btn">
-            <button type="button" class="btn btn-primary" ng-click="accept()">Save</button>
+            <button type="button" class="btn btn-primary" ng-click="saveFont()">Save</button>
           </span>
         </div>
       </div>
     </div>
     <div class="row row-centered spacing-top">
-      <awesome-type name="name"></awesome-type>
+      <font-selection text="name" selection="selectedFont" fonts="fonts"></font-selection>
       <div style="clear: left;"></div>
     </div>
   </form>

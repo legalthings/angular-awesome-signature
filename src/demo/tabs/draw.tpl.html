@@ -1,10 +1,15 @@
-<div>
+<div ng-controller="drawController">
   <form method="post" action="">
-    <div class="8th-width justified">
-      <signature-pad signature accept="accept" clear="clear" height="220" width="568"></signature-pad>
-      <br>
-      <button type="button" class="btn btn-success" ng-click="save()">Save</button>
-      <button type="button" class="btn btn-danger" ng-click="clear()">Clear</button>
+    <div class="row">
+      <div class="col-md-4 col-lg-offset-4 justified">
+        <signature-pad signature accept="accept" clear="clear" height="220" width="568"></signature-pad>
+        <br>
+        <button type="button" class="btn btn-success" ng-click="save()">Save</button>
+        <button type="button" class="btn btn-danger" ng-click="clear()">Clear</button>
+        <br>
+        <br>
+        <div id="baseString" style="font-size: 8px; word-wrap: break-word;"></div>
+      </div>
     </div>
   </form>
 </div>
