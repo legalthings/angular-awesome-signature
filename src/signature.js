@@ -9,7 +9,10 @@ angular.module('awesome-signature', [
   'internationalPhoneNumber'
 ]);
 
+angular.module('awesome-signature').constant('awesomeConfig', {
+	endPoint: "https://m7nig4x4x1.execute-api.eu-west-1.amazonaws.com/dev/sms-lambda-development"
+});
+
 angular.module('awesome-signature').config(['$httpProvider', function ($httpProvider) {
   $httpProvider.defaults.useXDomain = true;
-}
-]);
+}]);

@@ -8,20 +8,6 @@ app.config(['$resourceProvider', function ($resourceProvider) {
   $resourceProvider.defaults.stripTrailingSlashes = false;
 }]);
 
-app.directive('responsiveCanvas', function () {
-  var c = $('#canvas');
-  var ct = c.get(0).getContext('2d');
-  var container = $(c).parent();
-
-  $(window).resize(resizeCanvas);
-
-  function resizeCanvas() {
-    c.attr('width', $(container).width());
-  }
-
-  resizeCanvas();
-});
-
 app.controller('AppCtrl', function ($scope, $window) {
   $scope.signature = {};
 
