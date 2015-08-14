@@ -1,6 +1,6 @@
 "use strict";
 
-angular.module('awesome-signature').service('sms',
+angular.module('awesomeSignature').service('sms',
   function ($http, $location, awesomeConfig) {
     var url = $location.protocol() + '://' + $location.host();
     if ($location.port() !== ($location.protocol() === 'https' ? 443 : 80)) {

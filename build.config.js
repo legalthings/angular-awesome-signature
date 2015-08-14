@@ -19,10 +19,10 @@ module.exports = {
    * app's unit tests.
    */
   app_files: {
-    js: ['src/**/*.js', '!src/**/*.spec.js', '!src/assets/**/*.js'],
+    js: ['src/**/*.js', 'demo/**/*.js', '!**/*.spec.js', '!src/assets/**/*.js'],
     jsunit: ['src/**/*.spec.js'],
-    tpl: ['src/**/*.tpl.html'],
-    html: ['src/index.html'],
+    tpl: ['src/**/*.tpl.html', 'demo/**/*.tpl.html'],
+    html: ['demo/index.html'],
     main_less: 'src/less/main.less',
     less: ['src/**/*.less'],
     extra: ['src/.htaccess']
@@ -57,28 +57,20 @@ module.exports = {
   vendor_files: {
     js: [
       'vendor/angular-bootstrap/ui-bootstrap-tpls.js',
-      'vendor/angular-bootstrap/ui-bootstrap-tpls.js',
-      'vendor/angular-native-dragdrop/draganddrop.js',
-      'vendor/angular-images-loaded/angular-images-loaded.js',
       'vendor/angular-signature/src/signature.js',
       'vendor/angular-resource/angular-resource.js',
-      'vendor/angular-aside/dist/js/angular-aside.js',
-      'vendor/angular-font-selection/src/angular-font-selection.js',
+      'vendor/angular-font-selection/font-selection.js',
       'vendor/intl-tel-input/build/js/intlTelInput.js',
       'vendor/intl-tel-input/lib/libphonenumber/build/utils.js',
       'vendor/international-phone-number/releases/international-phone-number.js',
       'vendor/ng-file-upload/ng-file-upload.js',
-      'vendor/signature_pad/signature_pad.js',
-      'vendor/legalthings.*/src/**/*.js',
-      '!vendor/legalthings.*/src/**/*.spec.js'
+      'vendor/signature_pad/signature_pad.js'
     ],
     css: [
       'vendor/**/*.css',
       '!vendor/intl-tel-input/examples/css/*.css'
     ],
     html: [
-      'vendor/legalthings.*/**/*.tpl.html',
-      'vendor/angular-font-selection/src/angular-font-selection.tpl.html'
     ],
     less: ['vendor/**/*.less'],
     less_js: 'vendor/less/dist/less.js',

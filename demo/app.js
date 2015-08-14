@@ -1,7 +1,7 @@
 "use strict";
 
 var app = angular.module('app', [
-  'awesome-signature',
+  'awesomeSignature',
 ]);
 
 app.config(['$resourceProvider', function ($resourceProvider) {

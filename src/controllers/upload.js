@@ -1,6 +1,6 @@
 "use strict";
 
-angular.module('awesome-signature').controller('uploadController', function ($scope, fileToDataUrl) {
+angular.module('awesomeSignature').controller('uploadController', function ($scope, fileToDataUrl) {
   $scope.$watch('file', function () {
     if ($scope.file) $scope.name = $scope.file.name;
   });
