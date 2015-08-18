@@ -3,7 +3,7 @@
 angular.module('awesomeSignature', [
   'ui.bootstrap',
   'signature',
-  'angularFontSelection',
+  'fontSelection',
   'ngFileUpload',
   'ngResource',
   'internationalPhoneNumber'

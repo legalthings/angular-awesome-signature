@@ -210,6 +210,16 @@ module.exports = function ( grunt ) {
        * The `compile_js` target is the concatenation of our application source
        * code and all specified vendor source code into a single file.
        */
+      dist: {
+        options: {
+          process: function (content) {
+            return grunt.template.process(content);
+          }
+        },
+        files: {
+          'dist/awesome-signature.js' : ['src/*.js', 'src/**/*.js']
+        }
+      },
       compile_js: {
         options: {
           banner: '<%= meta.banner %>'
@@ -363,6 +373,8 @@ module.exports = function ( grunt ) {
           '<%= vendor_files.js %>',
           '<%= build_dir %>/src/*.js',
           '<%= build_dir %>/src/*/**/*.js',
+          '<%= build_dir %>/demo/*.js',
+          '<%= build_dir %>/demo/*/**/*.js',
           '<%= html2js.tpls.dest %>',
           '<%= build_dir %>/assets/<%= pkg.name %>.css'
         ]
@@ -531,7 +543,8 @@ module.exports = function ( grunt ) {
   grunt.registerTask( 'build', [
     'clean', 'html2js', /*'jshint', */ 'less:build',
     'copy:build_app_assets', 'copy:build_less', 'copy:build_tpl', 'copy:build_vendor_assets',
-    'copy:build_extra', 'copy:build_appjs', 'copy:build_vendorjs', 'copy:build_vendorhtml', 'copy:build_vendorcss', 'index:build'
+    'copy:build_extra', 'copy:build_appjs', 'copy:build_vendorjs', 'copy:build_vendorhtml', 'copy:build_vendorcss', 'index:build',
+    'concat:dist'
     /*, 'karmaconfig', 'karma:continuous'*/
   ]);
 
@@ -589,7 +602,7 @@ module.exports = function ( grunt ) {
       return file.replace( dirRE, '' );
     });
 
-    grunt.file.copy('src/index.html', this.data.dir + '/index.html', { 
+    grunt.file.copy('demo/index.html', this.data.dir + '/index.html', {
       process: function ( contents, path ) {
         return grunt.template.process( contents, {
           data: {
