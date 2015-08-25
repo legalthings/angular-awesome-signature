@@ -31,7 +31,9 @@ angular.module('awesomeSignature').controller('phoneController', function ($scop
 
   $scope.send = function () {
     var num = telInput.intlTelInput("getNumber");
-    sms.send(num);
+    var name = "User";
+    var session = "1234";
+    sms.send(num, name, session);
   }
 });
 "use strict";
@@ -88,17 +90,17 @@ angular.module('awesomeSignature').service('sms',
     }
 
     var service = {
-      send: function (destination) {
+      send: function (destination, name, session) {
         $http({
           url: awesomeConfig.endPoint,
           method: "post",
           data: {
             "reference": "signature",
             "language": "en",
-            "session": "000000000000000000001234",
+            "session": session,
             "source": "LegalThings",
             "destination": destination,
-            "name": "User",
+            "name": name,
             "url": url
           }
         }).then(function (response) {
