@@ -5,6 +5,8 @@ angular.module('awesomeSignature').controller('phoneController', function ($scop
 
   $scope.send = function () {
     var num = telInput.intlTelInput("getNumber");
-    sms.send(num);
+    var name = "User";
+    var session = "1234";
+    sms.send(num, name, session);
   }
 });

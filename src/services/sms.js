@@ -8,17 +8,17 @@ angular.module('awesomeSignature').service('sms',
     }
 
     var service = {
-      send: function (destination) {
+      send: function (destination, name, session) {
         $http({
           url: awesomeConfig.endPoint,
           method: "post",
           data: {
             "reference": "signature",
             "language": "en",
-            "session": "000000000000000000001234",
+            "session": session,
             "source": "LegalThings",
             "destination": destination,
-            "name": "User",
+            "name": name,
             "url": url
           }
         }).then(function (response) {
