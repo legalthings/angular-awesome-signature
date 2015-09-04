@@ -1,6 +1,6 @@
-"use strict";
-
 angular.module('awesomeSignature').controller('typeController', function ($scope) {
+  "use strict";
+
   $scope.fonts = [
     { name: "Indie Flower", family: "Indie Flower", size: "25px" },
     { name: "Covered By Your Grace", family: "Covered By Your Grace", size: "25px" },

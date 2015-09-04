@@ -1,6 +1,6 @@
-"use strict";
-
 angular.module('awesomeSignature').service('fileToDataUrl', function () {
+  "use strict";
+  
   return function (file, callback) {
     if (!file) return;
 

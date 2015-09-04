@@ -1,5 +1,3 @@
-"use strict";
-
 angular.module('awesomeSignature', [
   'ui.bootstrap',
   'signature',
@@ -10,23 +8,25 @@ angular.module('awesomeSignature', [
 ]);
 
 angular.module('awesomeSignature').constant('awesomeConfig', {
-	endPoint: "https://m7nig4x4x1.execute-api.eu-west-1.amazonaws.com/dev/sms-lambda-development"
+  endPoint: "https://m7nig4x4x1.execute-api.eu-west-1.amazonaws.com/dev/sms-lambda-development"
 });
 
 angular.module('awesomeSignature').config(['$httpProvider', function ($httpProvider) {
+  "use strict";
+
   $httpProvider.defaults.useXDomain = true;
 }]);
-"use strict";
-
 angular.module('awesomeSignature').controller('drawController', function ($scope) {
+  "use strict";
+
   $scope.save = function () {
     var signature = $scope.accept();
     $scope.signature.dataUrl = signature.dataUrl;
   }
 });
-"use strict";
-
 angular.module('awesomeSignature').controller('phoneController', function ($scope, sms) {
+  "use strict";
+
   var telInput = $("#phone");
 
   $scope.send = function () {
@@ -36,9 +36,9 @@ angular.module('awesomeSignature').controller('phoneController', function ($scop
     sms.send(num, name, session);
   }
 });
-"use strict";
-
 angular.module('awesomeSignature').controller('typeController', function ($scope) {
+  "use strict";
+
   $scope.fonts = [
     { name: "Indie Flower", family: "Indie Flower", size: "25px" },
     { name: "Covered By Your Grace", family: "Covered By Your Grace", size: "25px" },
@@ -49,9 +49,10 @@ angular.module('awesomeSignature').controller('typeController', function ($scope
     $scope.signature.dataUrl = $scope.selectedFont.dataUrl;
   };
 });
-"use strict";
 
 angular.module('awesomeSignature').controller('uploadController', function ($scope, fileToDataUrl) {
+  "use strict";
+
   $scope.$watch('file', function () {
     if ($scope.file) $scope.name = $scope.file.name;
   });
@@ -64,9 +65,9 @@ angular.module('awesomeSignature').controller('uploadController', function ($sco
     });
   }
 });
-"use strict";
-
 angular.module('awesomeSignature').service('fileToDataUrl', function () {
+  "use strict";
+  
   return function (file, callback) {
     if (!file) return;
 
@@ -80,10 +81,11 @@ angular.module('awesomeSignature').service('fileToDataUrl', function () {
   }
 });
 
-"use strict";
-
 angular.module('awesomeSignature').service('sms',
+  ['$http', '$location', 'awesomeConfig',
   function ($http, $location, awesomeConfig) {
+    "use strict";
+    
     var url = $location.protocol() + '://' + $location.host();
     if ($location.port() !== ($location.protocol() === 'https' ? 443 : 80)) {
       url = url + ':' + $location.port();
@@ -113,4 +115,4 @@ angular.module('awesomeSignature').service('sms',
 
     return service;
   }
-);
+  ]);

@@ -1,6 +1,6 @@
-"use strict";
-
 angular.module('awesomeSignature').controller('phoneController', function ($scope, sms) {
+  "use strict";
+
   var telInput = $("#phone");
 
   $scope.send = function () {
